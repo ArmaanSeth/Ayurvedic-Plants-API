@@ -22,6 +22,9 @@ def read_imagefile(file) -> Image.Image:
 
 app = FastAPI()
 
+@app.get('/')
+async def hello_world():
+    return "hello world"
 @app.post("/predict")
 async def predict_api(file: UploadFile = File(...)):
     print("t")
